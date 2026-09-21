@@ -85,10 +85,9 @@ The project applies several SQL analytical techniques, including:
 sql-exploratory-data-analysis-project/
 │
 ├── datasets/
-│   └── flat-files/
-│       ├── dim_customers.csv
-│       ├── dim_products.csv
-│       └── fact_sales.csv
+│   ├── dim_customers.csv
+│   ├── dim_products.csv
+│   └── fact_sales.csv
 │
 ├── docs/
 │   ├── Project Roadmap.pdf
@@ -120,15 +119,15 @@ sql-exploratory-data-analysis-project/
 
 The project uses three analytical datasets:
 
-### `dim_customers.csv`
+### [`dim_customers.csv`](datasets/dim_customers.csv)
 
 Contains customer-level information used to analyze customer demographics, purchasing behavior, and customer performance.
 
-### `dim_products.csv`
+### [`dim_products.csv`](datasets/dim_products.csv)
 
 Contains product-level information used to analyze product categories, costs, and product performance.
 
-### `fact_sales.csv`
+### [`fact_sales.csv`](datasets/fact_sales.csv)
 
 Contains sales transaction data used to calculate sales metrics and analyze business performance over time.
 
@@ -142,28 +141,45 @@ The SQL scripts are organized sequentially to follow the progression of the anal
 
 The initial scripts establish the database and explore the available tables, columns, and data.
 
+- [`00_init_database.sql`](scripts/00_init_database.sql)
+- [`01_database_exploration.sql`](scripts/01_database_exploration.sql)
+
 ### 2. Dimensions and Date Exploration
 
 The analysis examines customer and product dimensions and identifies the date range covered by the sales data.
+
+- [`02_dimensions_exploration.sql`](scripts/02_dimensions_exploration.sql)
+- [`03_date_range_exploration.sql`](scripts/03_date_range_exploration.sql)
 
 ### 3. Measures and Magnitude Analysis
 
 Key business metrics are calculated and analyzed across different dimensions.
 
+- [`04_measures_exploration.sql`](scripts/04_measures_exploration.sql)
+- [`05_magnitude_analysis.sql`](scripts/05_magnitude_analysis.sql)
+
 ### 4. Ranking and Trend Analysis
 
 Customers and products are ranked based on performance, while changes in sales and business metrics are analyzed over time.
+
+- [`06_ranking_analysis.sql`](scripts/06_ranking_analysis.sql)
+- [`07_change_over_time_analysis.sql`](scripts/07_change_over_time_analysis.sql)
 
 ### 5. Advanced Analysis
 
 The project applies cumulative analysis, performance analysis, segmentation, and part-to-whole analysis to obtain deeper business insights.
 
+- [`08_cumulative_analysis.sql`](scripts/08_cumulative_analysis.sql)
+- [`09_performance_analysis.sql`](scripts/09_performance_analysis.sql)
+- [`10_data_segmentation.sql`](scripts/10_data_segmentation.sql)
+- [`11_part_to_whole_analysis.sql`](scripts/11_part_to_whole_analysis.sql)
+
 ### 6. Analytical Reports
 
-The final scripts create reusable reports focused on:
+The final scripts create reusable reports focused on customer and product analysis.
 
-- Customer analysis
-- Product analysis
+- [`12_report_customers.sql`](scripts/12_report_customers.sql)
+- [`13_report_products.sql`](scripts/13_report_products.sql)
 
 ---
 
@@ -185,6 +201,8 @@ The report includes information and metrics related to:
 - Customer lifespan
 - Customer segmentation
 
+The customer report is available in [`12_report_customers.sql`](scripts/12_report_customers.sql).
+
 ---
 
 ## 📦 Product Report
@@ -203,6 +221,8 @@ The report includes analysis related to:
 - Product lifespan
 - Product segmentation
 
+The product report is available in [`13_report_products.sql`](scripts/13_report_products.sql).
+
 ---
 
 ## 📚 Documentation
@@ -219,10 +239,10 @@ The `docs/` directory contains the project roadmap and supporting project docume
 1. Clone or download the repository.
 2. Open SQL Server Management Studio.
 3. Create or connect to a SQL Server database.
-4. Run `00_init_database.sql` to initialize the database.
+4. Run [`00_init_database.sql`](scripts/00_init_database.sql) to initialize the database.
 5. Execute the remaining scripts in numerical order.
 6. Review the analytical queries and their results.
-7. Explore the customer and product reports.
+7. Explore the [Customer Report](scripts/12_report_customers.sql) and [Product Report](scripts/13_report_products.sql).
 
 ---
 
